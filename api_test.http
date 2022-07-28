@@ -1,0 +1,9 @@
+# Create new user
+POST http://127.0.0.1:3000/users/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "example@gmail.com",
+    "password": "test123"
+}
