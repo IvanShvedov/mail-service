@@ -6,7 +6,7 @@ from starlette.middleware.cors import CORSMiddleware
 from starlette.routing import Mount
 
 from config import Config
-from routes.user_routes import routes as user_routes
+from routes.client_routes import routes as client_routes
 
 
 middleware = [
@@ -16,15 +16,15 @@ middleware = [
 
 def configure_routes() -> List:
     routes = [
-        Mount('/users', routes=user_routes)
+        Mount('/clients', routes=client_routes),
     ]
     return routes
 
-def create_app(cfg: Config) -> Starlette:
+def create_app(cfg: Config, on_startup=[]) -> Starlette:
     app = Starlette(
         debug=cfg.DEBUG,
         routes=configure_routes(),
         middleware=middleware,
-        on_startup=[]
+        on_startup=on_startup
     )
     return app

@@ -1,0 +1,33 @@
+# Create new client
+POST http://127.0.0.1:3000/clients/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "phone": "9697352300",
+    "code": "+7",
+    "tag": "",
+    "t_zone": "Moscow"
+}
+
+# Delete client
+DELETE http://127.0.0.1:3000/clients/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "client_id": "1"
+}
+
+# Update client
+PUT http://127.0.0.1:3000/clients/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "client_id": "1",
+    "phone": "9345678900",
+    "code": "+7",
+    "tag": "",
+    "t_zone": "Moscow"
+}

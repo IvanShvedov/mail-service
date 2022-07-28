@@ -19,10 +19,10 @@ storage = PostgreStorage(
     username=config.DBUSER
 )
 service = Service(storage)
-app = create_app(config)
+app = create_app(config, [storage.connect])
 
 
 if __name__ == '__main__':
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(storage.connect())
+    # loop = asyncio.get_event_loop()
+    # loop.run_until_complete(storage.connect())
     uvicorn.run(app=app, host=config.HOST, port=config.PORT)

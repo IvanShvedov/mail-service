@@ -1,7 +1,7 @@
 DBPORT: 5432
 DBUSER: ivan
 DBPASSWORD: 12345
-DBNAME: badoo
+DBNAME: mail_service
 DBHOST: 127.0.0.1
 
 HOST: 127.0.0.1

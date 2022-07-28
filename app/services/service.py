@@ -1,17 +1,8 @@
-from abc import ABC, abstractmethod
-
 from storages.base_storage import Storage
-from services.user_service import UserService
+from services.client_service import ClientService
 
 
-class AbsService(ABC):
-
-    @abstractmethod
-    def User(self):
-        pass
-
-
-class Service(AbsService):
+class Service:
 
     def __new__(cls, storage: Storage = None):
         if not hasattr(cls, '_instance'):
@@ -19,5 +10,5 @@ class Service(AbsService):
             cls._instance = super().__new__(cls)
         return cls._instance
 
-    def User(self):
-        return UserService(self.storage) 
+    def Client(self):
+        return ClientService(self.storage) 
