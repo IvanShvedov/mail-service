@@ -82,8 +82,8 @@ class MailingService:
     async def send_message(self, mailing: MailingDTO, clients: List[ClientDTO]):
         check = await self.check_time(mailing.start_time, mailing.end_time)
         if not check:
-            delay = parser.parse(mailing.start_time) - datetime.now()
-            asyncio.sleep(delay.total_seconds())
+            delay = mailing.start_time - datetime.now()
+            await asyncio.sleep(delay.total_seconds())
 
         message_service = MessageService(self.storage)
         headers={"Authorization": "Bearer " + self.cfg.API_TOKEN}
