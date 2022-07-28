@@ -1,0 +1,1 @@
+CONFIG_YAML_PATH = "config.yaml"
