@@ -4,6 +4,14 @@ from .base import Base
 
 
 @dataclass
+class MailingDTO(Base):
+    start_time: str = None
+    message: str = None
+    filter: str = None
+    end_time: str = None
+
+
+@dataclass
 class CreateMailingDTO(Base):
     start_time: str = None
     message: str = None

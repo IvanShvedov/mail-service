@@ -1,3 +1,6 @@
+from datetime import datetime
+from dateutil import parser
+
 from storages.base_storage import Storage
 from entity.mailing import CreateMailingDTO, UpdateMailingDTO
 from .queries import CREATE_MAILING, DELETE_MAILING, UPDATE_MAILING
@@ -33,3 +36,10 @@ class MailingService:
                 end_time=mailing.end_time
             )
         )
+    
+    async def check_time(self, start_time, end_time):
+        start_time = parser.parse(start_time)
+        end_time = parser.parse(end_time)
+        if start_time < datetime.now() and end_time > datetime.now():
+            return True
+        return False

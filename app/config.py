@@ -21,7 +21,9 @@ class Config:
 
         'LOG_DIR',
         'LOG_LEVEL',
-        'LOGGER_NAME'
+        'LOGGER_NAME',
+
+        'API_TOKEN'
     ]
 
     def __init__(self, yaml_file: str):
