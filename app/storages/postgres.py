@@ -22,7 +22,8 @@ class PostgreStorage(Storage):
         await self._database.connect()
     
     async def execute(self, command: str):
-        res = await self._database.execute(command)
+        await self._database.execute(command)
+        res = await self._database.fetch_one("SELECT LASTVAL()")
         return res
 
     async def fetch(self, command: str):

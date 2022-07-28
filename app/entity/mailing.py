@@ -5,6 +5,7 @@ from .base import Base
 
 @dataclass
 class MailingDTO(Base):
+    id: str = None
     start_time: str = None
     message: str = None
     filter: str = None

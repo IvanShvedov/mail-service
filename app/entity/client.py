@@ -18,3 +18,12 @@ class UpdateClientDTO(Base):
     code: str = None
     tag: str = None
     t_zone: str = None
+
+
+@dataclass
+class ClientDTO(Base):
+    id: str = None
+    phone: str = None
+    code: str = None
+    tag: str = None
+    t_zone: str = None
