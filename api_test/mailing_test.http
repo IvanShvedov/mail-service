@@ -1,0 +1,33 @@
+# Create new mailing
+POST http://127.0.0.1:3000/mailing/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "start_time": "28-07-2022 10:00:00",
+    "message": "test",
+    "filter": "",
+    "end_time": "28-07-2022 12:00:00"
+}
+
+# Delete mailing
+DELETE http://127.0.0.1:3000/mailing/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "mailing_id": "2"
+}
+
+# Update mailing
+PUT http://127.0.0.1:3000/mailing/
+Accept: application/json
+Content-Type: application/json
+
+{
+    "mailing_id": "1",
+    "start_time": "28-07-2022 10:00:00",
+    "message": "test12",
+    "filter": "",
+    "end_time": "28-07-2022 12:00:00"
+}

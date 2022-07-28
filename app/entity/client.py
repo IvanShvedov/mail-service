@@ -1,5 +1,4 @@
 from dataclasses import dataclass
-from http import client
 
 from .base import Base
 

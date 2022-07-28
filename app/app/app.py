@@ -7,6 +7,8 @@ from starlette.routing import Mount
 
 from config import Config
 from routes.client_routes import routes as client_routes
+from routes.mailing_routes import routes as mailing_routes
+
 
 
 middleware = [
@@ -17,6 +19,7 @@ middleware = [
 def configure_routes() -> List:
     routes = [
         Mount('/clients', routes=client_routes),
+        Mount('/mailing', routes=mailing_routes),
     ]
     return routes
 

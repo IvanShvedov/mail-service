@@ -31,7 +31,3 @@ class ClientService:
                 timezone=client.t_zone
             )
         )
-
-
-# from datetime import datetime, timezone
-# dt = datetime.now(timezone.utc)

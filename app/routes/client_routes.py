@@ -1,4 +1,3 @@
-from turtle import update
 from starlette.routing import Route
 from starlette.requests import Request
 from starlette.responses import JSONResponse
