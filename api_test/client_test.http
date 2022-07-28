@@ -4,9 +4,9 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "phone": "9697352300",
+    "phone": "9267941251",
     "code": "+7",
-    "tag": "",
+    "tag": "test",
     "t_zone": "Moscow"
 }
 

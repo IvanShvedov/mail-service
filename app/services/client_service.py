@@ -43,7 +43,7 @@ class ClientService:
                     phone=client[1],
                     code=client[2],
                     tag=client[3],
-                    timezone=client[4]
+                    t_zone=client[4]
                 )
             )
         return res

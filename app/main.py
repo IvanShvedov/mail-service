@@ -17,7 +17,7 @@ storage = PostgreStorage(
     password=config.DBPASSWORD,
     username=config.DBUSER
 )
-service = Service(storage)
+service = Service(storage, config)
 app = create_app(config, [storage.connect])
 
 

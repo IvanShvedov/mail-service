@@ -7,9 +7,10 @@ from entity.mailing import CreateMailingDTO, UpdateMailingDTO
 
 
 async def create_mailing(request: Request):
-    service = Service().Mailing()
+    mailing_service = Service().Mailing()
+    client_service = Service().Client()
     body = await request.json()
-    res = await service.create(
+    mailing_id = await mailing_service.create(
         CreateMailingDTO(
             start_time=body["start_time"],
             message=body["message"],
@@ -17,8 +18,9 @@ async def create_mailing(request: Request):
             end_time=body["end_time"],
         )
     )
-    
-    await service.create_task()
+    mailing = await mailing_service.fetch(mailing_id=mailing_id)
+    clients = await client_service.fetch_by_filter(filter=mailing.filter)
+    await mailing_service.create_task(mailing_service.send_message(mailing=mailing, clients=clients))
     return JSONResponse("Mailing added", 200)
 
 
