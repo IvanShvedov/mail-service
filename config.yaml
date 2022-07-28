@@ -12,4 +12,5 @@ LOG_DIR: logs
 LOG_LEVEL: 1
 LOGGER_NAME: main
 
+API_URL: https://probe.fbrq.cloud/v1/send/
 API_TOKEN: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTA1NDg1OTgsImlzcyI6ImZhYnJpcXVlIiwibmFtZSI6ImFhYWFzYW1hbGFtYWR1bWFsYW1hIn0.CbmmPUJNoQdE6h8LsQyv44PtYmVdTP8hVwyNo7J0SiY

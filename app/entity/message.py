@@ -1,11 +1,10 @@
 from dataclasses import dataclass
-from http import client
 
 from .base import Base
 
 
 @dataclass
-class CreateMessageDTO:
+class CreateMessageDTO(Base):
     created_at: str = None
     status: str = None
     mailing_id: str = None
@@ -13,6 +12,13 @@ class CreateMessageDTO:
 
 
 @dataclass
-class UpdateMessageDTO:
+class UpdateMessageDTO(Base):
     id: str = None
     status: str = None
+
+
+@dataclass
+class SendMessageDTO(Base):
+    id: str = None
+    phone: str = None
+    text: str = None

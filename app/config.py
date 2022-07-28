@@ -23,7 +23,8 @@ class Config:
         'LOG_LEVEL',
         'LOGGER_NAME',
 
-        'API_TOKEN'
+        'API_TOKEN',
+        'API_URL'
     ]
 
     def __init__(self, yaml_file: str):

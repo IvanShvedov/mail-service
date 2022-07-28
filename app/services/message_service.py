@@ -1,7 +1,12 @@
+import json
+from aiohttp import ClientSession
 from storages.base_storage import Storage
 
-from entity.message import CreateMessageDTO, UpdateMessageDTO
+from config import Config
+from entity.message import CreateMessageDTO, UpdateMessageDTO, SendMessageDTO
 from .queries import CREATE_MESSAGE, DELETE_MESSAGE, UPDATE_MESSAGE
+
+cfg = Config()
 
 class MessageService:
 
@@ -30,3 +35,10 @@ class MessageService:
                 status=message.status
             )
         )
+
+    async def send_message(self, message: SendMessageDTO):
+        headers={"Authorization": "Bearer " + cfg.API_TOKEN}
+        message = json.dumps(message.to_dict())
+        async with ClientSession(cfg.API_URL, headers=headers) as session:
+            async with session.post("/send/" + message.id, data=message) as resp:
+                print(resp.status)
